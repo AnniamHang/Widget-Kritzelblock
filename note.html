@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kritzelblock — Notiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="note-header">
+    <a class="back" href="index.html">← Zurück</a>
+    <div class="actions">
+      <button id="clearBtn">Löschen</button>
+      <button id="exportBtn">Kopieren</button>
+    </div>
+  </header>
+
+  <main class="note-page">
+    <textarea id="noteArea" placeholder="Schreibe deine Gedanken..." aria-label="Notiz eingeben"></textarea>
+    <div id="status" class="status">Gespeichert</div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
