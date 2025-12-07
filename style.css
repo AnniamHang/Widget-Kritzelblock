@@ -4,11 +4,40 @@
   --accent:#d9a300;
 }
 *{box-sizing:border-box}
-body,html{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
-.wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;background:#f4f4f6}
+body,html{
+  height:100%;
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: transparent; /* wichtig für Notion-Embed: keine eigene graue Fläche */
+}
+
+/* Container anpassen: kein Vollbild-Hintergrund mehr, transparent, und nur minimaler Innenabstand */
+.wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  /* height:100vh;  <- entfernt, damit das Widget nicht die ganze Höhe füllt */
+  min-height:120px;
+  padding:24px 0;
+  background: transparent; /* entfernt grauen Hintergrund */
+}
+
+/* Optional: wenn du in Notion viel Platz hast und das Icon weiter oben haben willst, passe padding an */
 .note-icon{text-decoration:none}
-.paper{width:180px;height:140px;background:var(--paper-yellow);border-radius:6px;box-shadow:6px 8px 16px var(--paper-shadow);position:relative;display:flex;align-items:flex-start;justify-content:center;overflow:hidden}
-.paper-fold{position:absolute;right:0;top:0;width:36px;height:36px;background:linear-gradient(135deg,#fef6b3,#f8e98a);transform:skewX(-12deg);}
+.paper{
+  width:180px;
+  height:140px;
+  background:var(--paper-yellow);
+  border-radius:6px;
+  box-shadow:6px 8px 16px var(--paper-shadow);
+  position:relative;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  overflow:hidden
+}
+.paper-fold{position:absolute;right:0;top:0;width:36px;height:36px;background:linear-gradient(135deg,#fef6b3,#f8e98a);transform:skewX(-12deg);} 
 .paper-lines{position:absolute;left:10px;right:10px;top:18px;display:flex;flex-direction:column;gap:12px}
 .paper-lines span{height:2px;background:rgba(0,0,0,0.06);display:block;border-radius:2px}
 .paper-text{position:absolute;bottom:10px;left:12px;font-weight:700;color:#6b3f00}
@@ -19,7 +48,7 @@ body,html{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Seg
 .note-header .back{color:#374151;text-decoration:none;font-weight:600}
 .note-header .actions button{margin-left:8px;padding:6px 10px;border-radius:6px;border:1px solid #ddd;background:#fff;cursor:pointer}
 .note-page{padding:16px}
-#noteArea{width:100%;height:calc(100vh - 110px);padding:16px;border-radius:8px;border:1px solid #e6e6e6;background:#fff7c7;resize:vertical;font-size:16px;line-height:1.5}
+#noteArea{width:100%;min-height:200px;max-height:calc(100vh - 110px);height:auto;padding:16px;border-radius:8px;border:1px solid #e6e6e6;background:#fff7c7;resize:vertical;font-size:16px;line-height:1.5}
 .status{padding:8px 12px;color:#374151;font-size:13px}
 
 @media (max-width:480px){
